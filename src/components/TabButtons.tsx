@@ -3,6 +3,7 @@ import { Pet } from "../App";
 
 export default function TabButtons({
   petData,
+  activeTab,
   setActiveTab,
 }: {
   petData: Pet[];
@@ -13,7 +14,7 @@ export default function TabButtons({
     <div className="tab__header">
       {petData.map((item, index) => (
         <li
-          className={`tab__button`}
+          className={`${index === activeTab && "active"} tab__button`}
           key={item.animal}
           onClick={() => setActiveTab(index)}
         >
